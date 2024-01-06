@@ -25,6 +25,7 @@ export const Review = sequelize.define('reviews', {
         allowNull: true
     },
     status: {
-        type: DataTypes.ENUM('published', 'deleted')
+        type: DataTypes.ENUM('published', 'deleted'),
+        defaultValue: 'published'
     }
 })
