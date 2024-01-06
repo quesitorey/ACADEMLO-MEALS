@@ -84,7 +84,11 @@ export const findAllUsersOrders = catchAsync(async(req, res, next) => {
 
 export const findOneUserOrder = catchAsync(async(req, res, next) => {
     const { user } = req
-    return res.status(201).json(user)
+    const orders = await OrderService.getAllOrders()
+    return res.status(201).json({
+        user,
+        orders
+    })
 })
 
 export const updateUser = catchAsync(async(req, res, next) => {
